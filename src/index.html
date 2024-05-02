@@ -16,8 +16,8 @@ path: home
         <div class="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
           <p class="text-lg leading-8 text-gray-600">Value statement here. Why do we elect Democrats? What do Democrats offer Gainesville? Elit sunt amet fugiat veniam occaecat fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.</p>
           <div class="mt-10 flex items-center gap-x-6">
-            <a href="#" class="rounded-md bg-blue-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">Get involved</a>
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Follow us on Instgram (or email if IG not ready) <span aria-hidden="true">→</span></a>
+            <a href="#" class="rounded-md bg-blue-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">Join GMDDC</a>
+            <a href="http://princewilliamdemocrats.com/districts/Gainesville/" class="text-sm font-semibold leading-6 text-gray-900">Donate (powered by Prince William County Democrats) <span aria-hidden="true">→</span></a>
           </div>
         </div>
         <img src="./static/img/GMDDC.webp" alt="" class="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36">
@@ -156,7 +156,7 @@ path: home
 
   <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-36">
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center mb-8">Get involved</h2>
-<form>
+<form id="getInvolved">
   <div class="space-y-12">
     <div class="grid grid-cols-1 gap-x-8 gap-y-10 border-b border-gray-900/10 pb-12 md:grid-cols-3">
       <div>
@@ -167,21 +167,21 @@ path: home
         <div class="sm:col-span-3">
           <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
           <div class="mt-2">
-            <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-700 sm:text-sm sm:leading-6">
           </div>
         </div>
 
         <div class="sm:col-span-3">
           <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
           <div class="mt-2">
-            <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-700 sm:text-sm sm:leading-6">
           </div>
         </div>
 
         <div class="sm:col-span-4">
           <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
           <div class="mt-2">
-            <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-700 sm:text-sm sm:leading-6">
           </div>
         </div>
       </div>
@@ -194,53 +194,65 @@ path: home
 
       <div class="max-w-2xl space-y-10 md:col-span-2">
         <fieldset>
-          <legend class="text-sm font-semibold leading-6 text-gray-900">By Email</legend>
+          <legend class="text-sm font-semibold leading-6 text-gray-900">Select as many as you'd like</legend>
           <div class="mt-6 space-y-6">
             <div class="relative flex gap-x-3">
               <div class="flex h-6 items-center">
-                <input id="comments" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <input id="ballots" name="ballots" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-700 focus:ring-blue-700">
               </div>
               <div class="text-sm leading-6">
-                <label for="comments" class="font-medium text-gray-900">Comments</label>
-                <p class="text-gray-500">Get notified when someones posts a comment on a posting.</p>
+                <label for="ballots" class="font-medium text-gray-900">Hand out sample ballots</label>
               </div>
             </div>
             <div class="relative flex gap-x-3">
               <div class="flex h-6 items-center">
-                <input id="candidates" name="candidates" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <input id="canvas" name="canvas" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-700 focus:ring-blue-700">
               </div>
               <div class="text-sm leading-6">
-                <label for="candidates" class="font-medium text-gray-900">Candidates</label>
-                <p class="text-gray-500">Get notified when a candidate applies for a job.</p>
+                <label for="canvas" class="font-medium text-gray-900">Canvas</label>
               </div>
             </div>
             <div class="relative flex gap-x-3">
               <div class="flex h-6 items-center">
-                <input id="offers" name="offers" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <input id="register" name="register" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-700 focus:ring-blue-700">
               </div>
               <div class="text-sm leading-6">
-                <label for="offers" class="font-medium text-gray-900">Offers</label>
-                <p class="text-gray-500">Get notified when a candidate accepts or rejects an offer.</p>
+                <label for="register" class="font-medium text-gray-900">Register voters</label>
+              </div>
+            </div>
+            <div class="relative flex gap-x-3">
+              <div class="flex h-6 items-center">
+                <input id="outreach" name="outreach" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-700 focus:ring-blue-700">
+              </div>
+              <div class="text-sm leading-6">
+                <label for="outreach" class="font-medium text-gray-900">Community outreach voters</label>
+              </div>
+              </div>
+              <div class="relative flex gap-x-3">
+                <div class="flex h-6 items-center">
+                  <input id="operations" name="operations" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-700 focus:ring-blue-700">
+                </div>
+                <div class="text-sm leading-6">
+                  <label for="operations" class="font-medium text-gray-900">Election day operations</label>
+                </div>
+              </div>
+              <div class="relative flex gap-x-3">
+                <div class="flex h-6 items-center">
+                  <input id="fundraising" name="fundraising" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-700 focus:ring-blue-700">
+                </div>
+                <div class="text-sm leading-6">
+                  <label for="fundraising" class="font-medium text-gray-900">Fundraising</label>
+                </div>
               </div>
             </div>
           </div>
         </fieldset>
       </div>
     </div>
-  </div>
 
   <div class="mt-6 flex items-center justify-end gap-x-6">
-    <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-    <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+    <button type="submit" class="rounded-md bg-blue-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">Submit</button>
   </div>
-</form>
 </div>
-
-<br><br><br><br><br><br><br><br><br><br>
-
-<h2>Get involved</h2>
-  Info here
-
-<h2>Why vote Democrat</h2>
-  Especially for Gainesville
+</form>
 </div>

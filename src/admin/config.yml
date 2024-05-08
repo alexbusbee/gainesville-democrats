@@ -66,7 +66,7 @@ collections:
           - { label: 'Name', name: 'name', widget: 'string' }
           - { label: 'Author', name: 'author', widget: 'string' }
           - { label: 'URL', name: 'url', widget: 'string' }
-  - label: 'Pages'
+  - label: 'Page'
     name: 'page'
     folder: 'src/pages'
     create: true
@@ -86,7 +86,7 @@ collections:
         name: 'description', 
         widget: 'string', 
         required: true, 
-        pattern: ['.{1,155}', 'Must have fewer than 155 characters'] ,
+        pattern: ['.{1,155}', 'Must have fewer than 155 characters'],
         hint: 'Must have fewer than 155 characters'
         }
       - { 
@@ -109,8 +109,14 @@ collections:
         },
         hint: 'Max file size of 2MB. Image only appears if Hero is set to Small or Large image.'
         }
-      - { 
-        label: 'Body', 
-        name: 'body', 
-        widget: 'markdown' 
-        }
+      - label: 'Body section' 
+        name: 'bodySection'
+        widget: 'list' 
+        types: 
+          - label: 'Section heading'
+            name: 'sectionHeading'
+            widget: 'markdown' 
+            # Can users put CTA buttons inside the markdown editor?
+          - label: 'Timeline'
+            name: 'timeline' 
+            widget: 'list'

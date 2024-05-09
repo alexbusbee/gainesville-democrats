@@ -90,10 +90,11 @@ collections:
         hint: 'Must have fewer than 155 characters'
         }
       - { 
-        label: 'Hero', 
-        name: 'hero', 
+        label: 'Hero options', 
+        name: 'heroOptions', 
         widget: 'select', 
-        options: [ 'No image', 'Small image', 'Large image' ], 
+        options: [ 'No image', 'Small image', 'Large image, straight', 
+        'Large image, diagonal', Background image' ], 
         required: true 
         }
       - {
@@ -107,16 +108,42 @@ collections:
             max_file_size: 2000000 # in bytes
           }
         },
-        hint: 'Max file size of 2MB. Image only appears if Hero is set to Small or Large image.'
+        hint: 'Max file size of 2MB. Image doesn't appear if Hero options is set to No image.'
+        }
+      - { 
+        label: 'Hero overline', name: 'heroOverline', widget: 'string' 
+        }
+        # Create custom CTA widget: https://decapcms.org/docs/custom-widgets/#registereditorcomponent
+        # Remove heading 1, 5, and 6 from all markdown
+      - { 
+        label: 'Hero content', name: 'heroContent', widget: 'markdown' 
         }
       - label: 'Body section' 
         name: 'bodySection'
         widget: 'list' 
         types: 
-          - label: 'Section heading'
-            name: 'sectionHeading'
-            widget: 'markdown' 
-            # Can users put CTA buttons inside the markdown editor?
           - label: 'Timeline'
             name: 'timeline' 
             widget: 'list'
+            fields: 
+              # Create custom CTA widget: https://decapcms.org/docs/custom-widgets/#registereditorcomponent
+              # Remove heading 1, 5, and 6 from all markdown
+              - { label: 'Section heading', name: 'sectionHeading', widget: 'markdown' }
+              - label: 'Dates'
+                name: 'dates'
+                widget: 'list'
+                fields:
+                  - { label: 'Date', name: 'date', widget: 'string' }
+                  - { label: 'Description', name: 'description', widget: 'markdown' }
+          - label: 'Collection'
+            name: 'collection' 
+            widget: 'list'
+            fields: 
+              - { label: 'Section heading', name: 'sectionHeading', widget: 'markdown' }
+              - label: 'Cards'
+                name: 'cards'
+                widget: 'list'
+                fields:
+                  - { label: 'Overline', name: 'overline', widget: 'string' }
+                  - { label: 'Tag', name: 'tag', widget: 'string' }
+                  - { label: 'Description', name: 'description', widget: 'markdown' }

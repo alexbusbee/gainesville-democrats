@@ -95,29 +95,46 @@ collections:
         widget: 'select', 
         options: [ 'No image', 'Small image', 'Large image, straight', 
         'Large image, diagonal', Background image' ], 
-        required: true 
+        required: true,
         }
-      - {
-        label: "Hero image",
-        name: "heroImage",
-        widget: "image",
-        choose_url: true,
+      - label: "Hero image"
+        name: "heroImage"
+        widget: "image"
+        choose_url: true
+        required: false
         media_library: {
           config: {
             multiple: false,
             max_file_size: 2000000 # in bytes
           }
-        },
-        hint: 'Max file size of 2MB. Image doesn't appear if Hero options is set to No image.'
         }
+        hint: "Max file size of 2MB. Image doesn’t appear if Hero options is set to No image."
       - { 
-        label: 'Hero overline', name: 'heroOverline', widget: 'string' 
+        label: 'Hero overline', name: 'heroOverline', widget: 'string', required: false
         }
         # Create custom CTA widget: https://decapcms.org/docs/custom-widgets/#registereditorcomponent
         # Remove heading 1, 5, and 6 from all markdown
-      - { 
-        label: 'Hero content', name: 'heroContent', widget: 'markdown' 
-        }
+      - label: 'Hero content'
+        name: 'heroContent'
+        widget: 'markdown'
+        required: true 
+      - label: 'Hero buttons'
+        name: 'heroButtons'
+        required: false
+        widget: 'object'
+        fields:
+          - { label: 'Primary button', name: 'primaryButton', widget: 'object', fields: 
+              [
+                { label: 'Text', name: 'text', widget: 'string', required: false },
+                { label: 'URL', name: 'url', widget: 'string', required: false }
+              ]
+            }
+          - { label: 'Secondary button', name: 'secondaryButton', widget: 'object', fields: 
+              [
+                { label: 'Text', name: 'text', widget: 'string', required: false },
+                { label: 'URL', name: 'url', widget: 'string', required: false }
+              ]
+            } 
       - label: 'Body section' 
         name: 'bodySection'
         widget: 'list' 
@@ -128,22 +145,58 @@ collections:
             fields: 
               # Create custom CTA widget: https://decapcms.org/docs/custom-widgets/#registereditorcomponent
               # Remove heading 1, 5, and 6 from all markdown
-              - { label: 'Section heading', name: 'sectionHeading', widget: 'markdown' }
+              - { label: 'Section title', name: 'sectionTitle', widget: 'text' }
+              - { label: 'Section content', name: 'sectionContent', widget: 'markdown', required: false }
+              - label: 'Section buttons'
+                name: 'sectionButtons'
+                required: false
+                widget: 'object'
+                fields:
+                  - { label: 'Primary button', name: 'primaryButton', widget: 'object', fields: 
+                      [
+                        { label: 'Text', name: 'text', widget: 'string', required: false },
+                        { label: 'URL', name: 'url', widget: 'string', required: false }
+                      ]
+                    }
+                  - { label: 'Secondary button', name: 'secondaryButton', widget: 'object', fields: 
+                      [
+                        { label: 'Text', name: 'text', widget: 'string', required: false },
+                        { label: 'URL', name: 'url', widget: 'string', required: false }
+                      ]
+                    }
               - label: 'Dates'
                 name: 'dates'
                 widget: 'list'
                 fields:
                   - { label: 'Date', name: 'date', widget: 'string' }
-                  - { label: 'Description', name: 'description', widget: 'markdown' }
+                  - { label: 'Content', name: 'content', widget: 'markdown' }
           - label: 'Collection'
             name: 'collection' 
             widget: 'list'
             fields: 
-              - { label: 'Section heading', name: 'sectionHeading', widget: 'markdown' }
+              - { label: 'Section title', name: 'sectionTitle', widget: 'text' }
+              - { label: 'Section content', name: 'sectionContent', widget: 'markdown', required: false }
+              - label: 'Section buttons'
+                name: 'sectionButtons'
+                required: false
+                widget: 'object'
+                fields:
+                  - { label: 'Primary button', name: 'primaryButton', widget: 'object', fields: 
+                      [
+                        { label: 'Text', name: 'text', widget: 'string', required: false },
+                        { label: 'URL', name: 'url', widget: 'string', required: false }
+                      ]
+                    }
+                  - { label: 'Secondary button', name: 'secondaryButton', widget: 'object', fields: 
+                      [
+                        { label: 'Text', name: 'text', widget: 'string', required: false },
+                        { label: 'URL', name: 'url', widget: 'string', required: false }
+                      ]
+                    }
               - label: 'Cards'
                 name: 'cards'
                 widget: 'list'
                 fields:
                   - { label: 'Overline', name: 'overline', widget: 'string' }
                   - { label: 'Tag', name: 'tag', widget: 'string' }
-                  - { label: 'Description', name: 'description', widget: 'markdown' }
+                  - { label: 'Content', name: 'Content', widget: 'markdown' }

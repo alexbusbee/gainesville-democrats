@@ -94,7 +94,7 @@ collections:
         name: 'heroOptions', 
         widget: 'select', 
         options: [ 'No image', 'Small image', 'Large image, straight', 
-        'Large image, diagonal', Background image' ], 
+        'Large image, diagonal', 'Background image' ], 
         required: true,
         }
       - label: "Hero image"
@@ -114,6 +114,10 @@ collections:
         }
         # Create custom CTA widget: https://decapcms.org/docs/custom-widgets/#registereditorcomponent
         # Remove heading 1, 5, and 6 from all markdown
+      - label: 'Hero heading'
+        name: 'heroHeading'
+        widget: 'string'
+        required: true 
       - label: 'Hero content'
         name: 'heroContent'
         widget: 'markdown'

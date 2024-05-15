@@ -326,14 +326,20 @@ path: home
 </div>
 </div>
 
-  <div class="mx-auto max-w-5xl px-6 lg:px-8 mt-24">
+  <div class="mx-auto max-w-5xl px-6 lg:px-8 mt-16">
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center mb-8">Get involved</h2>
-<form id="getInvolved">
+<form id="getInvolved" method="POST" netlify netlify-honeypot="bot-field">
   <div class="space-y-12">
     <div class="grid grid-cols-1 gap-x-8 gap-y-10 border-b border-gray-900/10 pb-12 md:grid-cols-3">
       <div>
         <h3 class="text-base font-semibold leading-7 text-gray-900">Personal Information</h3>
       </div>
+
+      <p class="hidden">
+        <label>
+          Don’t fill this out if you’re human: <input name="bot-field" />
+        </label>
+      </p>
 
       <div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 md:col-span-2">
         <div class="sm:col-span-3">

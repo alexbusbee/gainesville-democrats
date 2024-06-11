@@ -197,10 +197,20 @@ collections:
                         { label: 'URL', name: 'url', widget: 'string', required: false }
                       ]
                     }
+              - label: "Card type"
+                name: "card-type"
+                widget: "select"
+                default: ["Default"]
+                options: 
+                  -  { label: "Default", value: "default" }
+                  -  { label: "People", value: "people" }
               - label: 'Cards'
                 name: 'cards'
                 widget: 'list'
                 fields:
                   - { label: 'Overline', name: 'overline', widget: 'string' }
+                  - { label: 'Title', name: 'title', widget: 'string' }
+                  - { label: 'Link', name: 'link', widget: 'string', pattern: ['^https?:\/\/[^\s$.?#].[^\s]*$', 'Must start with http:// or https:// and be a valid URL'] }
                   - { label: 'Tag', name: 'tag', widget: 'string' }
                   - { label: 'Content', name: 'Content', widget: 'markdown' }
+

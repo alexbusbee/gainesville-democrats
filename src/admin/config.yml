@@ -213,4 +213,38 @@ collections:
                   - { label: 'Link', name: 'link', widget: 'string', pattern: ['^https?:\/\/[^\s$.?#].[^\s]*$', 'Must start with http:// or https:// and be a valid URL'] }
                   - { label: 'Tag', name: 'tag', widget: 'string' }
                   - { label: 'Content', name: 'Content', widget: 'markdown' }
-
+          - label: 'Form'
+            name: 'form' 
+            widget: 'list'
+            fields: 
+              # Create form
+              - { label: 'Section title', name: 'sectionTitle', widget: 'text' }
+              - { label: 'Section content', name: 'sectionContent', widget: 'markdown', required: false }
+              - label: 'Section buttons'
+                name: 'sectionButtons'
+                required: false
+                widget: 'object'
+                fields:
+                  - { label: 'Primary button', name: 'primaryButton', widget: 'object', fields: 
+                      [
+                        { label: 'Text', name: 'text', widget: 'string', required: false },
+                        { label: 'URL', name: 'url', widget: 'string', required: false }
+                      ]
+                    }
+                  - { label: 'Secondary button', name: 'secondaryButton', widget: 'object', fields: 
+                      [
+                        { label: 'Text', name: 'text', widget: 'string', required: false },
+                        { label: 'URL', name: 'url', widget: 'string', required: false }
+                      ]
+                    }
+              - label: 'Form section'
+                name: 'formSection' 
+                widget: 'list'
+                fields: 
+                - { label: 'Section title', name: 'sectionTitle', widget: 'text' }
+                - { label: 'Section type', name: 'sectionType', widget: 'select', required: true, options: [ 'Input', 'Checkbox', 'Radio' ] }
+                - label: 'Form fields'
+                  name: 'formFields' 
+                  widget: 'list'
+                  fields: 
+                  - { label: 'Field title', name: 'fieldTitle', widget: 'text' }

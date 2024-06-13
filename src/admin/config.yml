@@ -143,6 +143,32 @@ collections:
         name: 'bodySection'
         widget: 'list' 
         types: 
+          - label: 'Text'
+            name: 'text' 
+            widget: 'list'
+            fields: 
+              # Create custom CTA widget: https://decapcms.org/docs/custom-widgets/#registereditorcomponent
+              # Remove heading 1, 5, and 6 from all markdown
+              - { label: 'Section overline', name: 'sectionOverline', widget: 'text' }
+              - { label: 'Section title', name: 'sectionTitle', widget: 'text' }
+              - { label: 'Section content', name: 'sectionContent', widget: 'markdown', required: false }
+              - label: 'Section buttons'
+                name: 'sectionButtons'
+                required: false
+                widget: 'object'
+                fields:
+                  - { label: 'Primary button', name: 'primaryButton', widget: 'object', fields: 
+                      [
+                        { label: 'Text', name: 'text', widget: 'string', required: false },
+                        { label: 'URL', name: 'url', widget: 'string', required: false }
+                      ]
+                    }
+                  - { label: 'Secondary button', name: 'secondaryButton', widget: 'object', fields: 
+                      [
+                        { label: 'Text', name: 'text', widget: 'string', required: false },
+                        { label: 'URL', name: 'url', widget: 'string', required: false }
+                      ]
+                    }
           - label: 'Timeline'
             name: 'timeline' 
             widget: 'list'

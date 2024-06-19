@@ -236,7 +236,7 @@ collections:
                 fields:
                   - { label: 'Overline', name: 'overline', widget: 'string' }
                   - { label: 'Title', name: 'title', widget: 'string' }
-                  - { label: 'Link', name: 'link', widget: 'string', pattern: ['^https?:\/\/[^\s$.?#].[^\s]*$', 'Must start with http:// or https:// and be a valid URL'] }
+                  - { label: 'URL', name: 'url', widget: 'string', pattern: ['^https?:\/\/[^\s$.?#].[^\s]*$', 'Must start with http:// or https:// and be a valid URL'] }
                   - { label: 'Tag', name: 'tag', widget: 'string' }
                   - { label: 'Content', name: 'Content', widget: 'markdown' }
           - label: 'Form'
